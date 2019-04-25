@@ -19,13 +19,13 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeBronze,
 			XpReward: 6.5,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: COPPER_ORE,
+					Name: COPPER_ORE,
 					Count: 1,
 				},
 				{
-					ItemName: TIN_ORE,
+					Name: TIN_ORE,
 					Count: 1,
 				},
 			},
@@ -33,9 +33,9 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeIron,
 			XpReward: 12.5,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: IRON_ORE,
+					Name: IRON_ORE,
 					Count: 1,
 				},
 			},
@@ -43,13 +43,13 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeSteel,
 			XpReward: 17.5,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: IRON_ORE,
+					Name: IRON_ORE,
 					Count: 1,
 				},
 				{
-					ItemName: COAL,
+					Name: COAL,
 					Count: 2,
 				},
 			},
@@ -57,9 +57,9 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeSilver,
 			XpReward: 13.7,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: SILVER_ORE,
+					Name: SILVER_ORE,
 					Count: 1,
 				},
 			},
@@ -67,13 +67,13 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeMithril,
 			XpReward: 30,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: MITHRIL_ORE,
+					Name: MITHRIL_ORE,
 					Count: 1,
 				},
 				{
-					ItemName: COAL,
+					Name: COAL,
 					Count: 4,
 				},
 			},
@@ -81,9 +81,9 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeGold,
 			XpReward: 22.5,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: GOLD_ORE,
+					Name: GOLD_ORE,
 					Count: 1,
 				},
 			},
@@ -91,13 +91,13 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeAdamant,
 			XpReward: 37.5,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: ADAMANT_ORE,
+					Name: ADAMANT_ORE,
 					Count: 1,
 				},
 				{
-					ItemName: COAL,
+					Name: COAL,
 					Count: 6,
 				},
 			},
@@ -105,13 +105,13 @@ func GenerateActionSlice() actions.ActionSlice {
 		{
 			Name:     MakeRune,
 			XpReward: 75,
-			RequiredResources: []ItemCount{
+			RequiredResources: []Item{
 				{
-					ItemName: RUNE_ORE,
+					Name: RUNE_ORE,
 					Count: 1,
 				},
 				{
-					ItemName: COAL,
+					Name: COAL,
 					Count: 8,
 				},
 			},
