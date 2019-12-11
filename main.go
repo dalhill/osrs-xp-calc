@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/dalton-hill/osrs-xp-calc/actions"
 	"github.com/dalton-hill/osrs-xp-calc/actions/ore"
 	"github.com/dalton-hill/osrs-xp-calc/items"
@@ -17,43 +18,23 @@ import (
    gold: 8453
 */
 
+/*
+	todo:
+		- load store from json config instead of having it exist in code
+		- allow user to not take an aciton, for example don't make iron bars because user only wants to use iron ore for steel bars
+
+		- allow user to assign priority, ex: {action: makeIron, priority: 8}
+		- only thing to add after that would be applying boons (ex: gold gauntlets)
+*/
+
 func main() {
-	itemStore := items.ItemSlice{
-		{
-			Name: items.IRON_ORE,
-			Count: 12675,
-		},
-		{
-			Name: items.SILVER_ORE,
-			Count: 566,
-		},
-		{
-			Name: items.COAL,
-			Count: 12014,
-		},
-		{
-			Name: items.GOLD_ORE,
-			Count: 8453,
-		},
-		{
-			Name: items.MITHRIL_ORE,
-			Count: 5860,
-		},
-		{
-			Name: items.ADAMANT_ORE,
-			Count: 5837,
-		},
-		{
-			Name: items.RUNE_ORE,
-			Count: 423,
-		},
-	}
-	actionStore := ore.GenerateActionSlice()
+	itemStore := items.LoadFromJSON("bank.json")
+	actionStore := ore.LoadFromJSON("actions/ore/ore.json")
 	actionStore.SortByXpPer(items.COAL)
 
 	for i := range actionStore {
 		actions.TakeMaxAction(&actionStore[i], itemStore)
 	}
 	fmt.Println(itemStore)
-	fmt.Println(actionStore)
+	fmt.Printf("TotalXP: %f\n", actionStore.GetTotalXP())
 }

@@ -1,15 +1,22 @@
+/*
+things to consider
+	will the user sell the bars or smith them?
+
+ultimately should make an MVP that makes a few assumptions
+*/
 package actions
 
 import (
 	"fmt"
-	"github.com/dalton-hill/osrs-xp-calc/items"
 	"sort"
+
+	"github.com/dalton-hill/osrs-xp-calc/items"
 )
 
 type Action struct {
-	Name string
-	Count int
-	XpReward float64
+	Name              string
+	Count             int
+	XpReward          float64
 	RequiredResources items.ItemSlice
 }
 
@@ -95,3 +102,11 @@ func TakeMaxAction(a *Action, itemSlice items.ItemSlice) {
 	fmt.Println(a.Name, a.Count)
 }
 
+// GetTotalXP sums up the total XP gain that is represented by the ActionSlice
+func (as ActionSlice) GetTotalXP() float64 {
+	var t float64
+	for _, a := range as {
+		t += a.XpReward * float64(a.Count)
+	}
+	return t
+}

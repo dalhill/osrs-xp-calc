@@ -1,0 +1,30 @@
+[
+    {
+        "Name": "IRON_ORE",
+        "Count": 12675
+    },
+    {
+        "Name": "SILVER_ORE",
+        "Count": 566
+    },
+    {
+        "Name": "COAL",
+        "Count": 30000
+    },
+    {
+        "Name": "GOLD_ORE",
+        "Count": 8453
+    },
+    {
+        "Name": "MITHRIL_ORE",
+        "Count": 5860
+    },
+    {
+        "Name": "ADAMANT_ORE",
+        "Count": 5837
+    },
+    {
+        "Name": "RUNE_ORE",
+        "Count": 423
+    }
+]

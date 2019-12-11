@@ -1,6 +1,11 @@
 package items
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"io/ioutil"
+	"encoding/json"
+)
 
 type Item struct {
 	Name string
@@ -40,4 +45,17 @@ func IndexMap(a ItemSlice, b ItemSlice) map[int]int {
 		}
 	}
 	return indexMap
+}
+
+// LoadFromJSON loads ItemSlice from the specified path.
+func LoadFromJSON(filename string) ItemSlice {
+	bs, err := ioutil.ReadFile(filename)
+	if err != nil {
+		log.Fatal(err)
+	}
+	var itemSlice ItemSlice
+		if err := json.Unmarshal(bs, &itemSlice); err != nil {
+		log.Fatal(err)
+	}
+	return itemSlice
 }
