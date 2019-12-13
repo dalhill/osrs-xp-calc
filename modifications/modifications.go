@@ -1,8 +1,11 @@
 package modifications
 
 import (
+	"fmt"
+
 	"github.com/dalton-hill/osrs-xp-calc/actions"
 	"github.com/dalton-hill/osrs-xp-calc/actions/ore"
+	"github.com/dalton-hill/osrs-xp-calc/items"
 )
 
 type UserSelection struct {
@@ -13,7 +16,7 @@ type UserSelection struct {
 // not sure exactly how i want to implement this yet
 type Modification struct {
 	Name        string
-	ActionName  string
+	ActionNames []string
 	ShouldApply bool
 	Modify      func(actions.Action) actions.Action
 }
@@ -26,10 +29,35 @@ type Modification struct {
 
 var GoldGauntlets = Modification{
 	Name:        "GoldGauntlets",
-	ActionName:  ore.MakeGold,
+	ActionNames: []string{ore.MakeGold},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
 		a.XpReward = 55
 		return a
 	},
+}
+
+var BlastFurnace = Modification{
+	Name:        "BlastFurnace",
+	ActionNames: []string{ore.MakeSteel, ore.MakeMithril, ore.MakeAdamant, ore.MakeRune},
+	ShouldApply: false,
+	Modify: func(a actions.Action) actions.Action {
+		for i := range a.RequiredResources {
+			r := &a.RequiredResources[i]
+			if r.Name == items.COAL {
+				r.Count = r.Count / 2
+			}
+		}
+		return a
+	},
+}
+
+func (m Modification) CanModify(a actions.Action) bool {
+	for _, aName := range m.ActionNames {
+		if aName == a.Name {
+			fmt.Printf("%s can modify %s\n", m.Name, a.Name)
+			return true
+		}
+	}
+	return false
 }

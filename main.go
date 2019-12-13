@@ -46,10 +46,13 @@ func main() {
 	itemStore := items.LoadFromJSON("bank.json")
 	actionStore := ore.LoadFromJSON("actions/ore/ore.json")
 	actionStore.SortByXpPer(items.COAL)
+	mods := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
 
 	for i := range actionStore {
-		if actionStore[i].Name == modifications.GoldGauntlets.ActionName {
-			actionStore[i] = modifications.GoldGauntlets.Modify(actionStore[i])
+		for _, m := range mods {
+			if m.CanModify(actionStore[i]) {
+				actionStore[i] = m.Modify(actionStore[i])
+			}
 		}
 		actions.TakeMaxAction(&actionStore[i], itemStore)
 	}
