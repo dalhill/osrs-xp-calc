@@ -20,14 +20,14 @@ type Modification struct {
 }
 
 // Modifier will be something such as GoldGauntlets which would return an
-// updated MAKE_GOLD action which has its experience reward doubled.
+// updated MakeGold action which has its experience reward doubled.
 // type Modifier interface {
 // 	Modify func
 // }
 
 var GoldGauntlets = Modification{
 	Name:        "GoldGauntlets",
-	ActionNames: []string{actions.MAKE_GOLD},
+	ActionNames: []string{actions.MakeGold},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
 		a.XpReward = 55
@@ -37,12 +37,12 @@ var GoldGauntlets = Modification{
 
 var BlastFurnace = Modification{
 	Name:        "BlastFurnace",
-	ActionNames: []string{actions.MAKE_STEEL, actions.MAKE_MITHRIL, actions.MAKE_ADAMANT, actions.MAKE_RUNE},
+	ActionNames: []string{actions.MakeSteel, actions.MakeMithril, actions.MakeAdamant, actions.MakeRune},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
 		for i := range a.RequiredResources {
 			r := &a.RequiredResources[i]
-			if r.Name == items.COAL {
+			if r.Name == items.Coal {
 				r.Count = r.Count / 2
 			}
 		}

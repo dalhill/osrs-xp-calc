@@ -12,7 +12,7 @@ import (
    adamant: 5837
    rune: 423
    silver: 566
-   coal: 12014
+   Coal: 12014
    mithril: 5860
    gold: 8453
 */
@@ -21,7 +21,7 @@ import (
 	todo:
 		- allow user to not take an aciton, for example don't make iron bars because user only wants to use iron ore for steel bars
 
-		- allow user to assign priority, ex: {action: MAKE_IRON, priority: 8}
+		- allow user to assign priority, ex: {action: MakeIron, priority: 8}
 		- only thing to add after that would be applying boons (ex: gold gauntlets)
 
 		aglorithm as follows
@@ -43,7 +43,7 @@ import (
 func main() {
 	itemStore := items.LoadItemsFromJSON("items/items.json")
 	actionStore := actions.LoadActionsFromJSON("actions/actions.json")
-	actionStore.SortByXpPer(items.COAL)
+	actionStore.SortByXpPer(items.Coal)
 	mods := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
 
 	for i := range actionStore {

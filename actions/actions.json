@@ -1,100 +1,100 @@
 [
 	{
-		"Name": "MAKE_BRONZE",
+		"Name": "MakeBronze",
 		"XpReward": 6.5,
 		"RequiredResources": [
 			{
-				"Name": "COPPER_ORE",
+				"Name": "CopperOre",
 				"Count": 1
 			},
 			{
-				"Name": "TIN_ORE",
+				"Name": "TinOre",
 				"Count": 1
 			}
 		]
 	},
 	{
-		"Name": "MAKE_IRON",
+		"Name": "MakeIron",
 		"XpReward": 12.5,
 		"RequiredResources": [
 			{
-				"Name": "IRON_ORE",
+				"Name": "IronOre",
 				"Count": 1
 			}
 		]
 	},
 	{
-		"Name": "MAKE_STEEL",
+		"Name": "MakeSteel",
 		"XpReward": 17.5,
 		"RequiredResources": [
 			{
-				"Name": "IRON_ORE",
+				"Name": "IronOre",
 				"Count": 1
 			},
 			{
-				"Name": "COAL",
+				"Name": "Coal",
 				"Count": 2
 			}
 		]
 	},
 	{
-		"Name": "MAKE_SILVER",
+		"Name": "MakeSilver",
 		"XpReward": 13.7,
 		"RequiredResources": [
 			{
-				"Name": "SILVER_ORE",
+				"Name": "SilverOre",
 				"Count": 1
 			}
 		]
 	},
 	{
-		"Name": "MAKE_MITHRIL",
+		"Name": "MakeMithril",
 		"XpReward": 30,
 		"RequiredResources": [
 			{
-				"Name": "MITHRIL_ORE",
+				"Name": "MithrilOre",
 				"Count": 1
 			},
 			{
-				"Name": "COAL",
+				"Name": "Coal",
 				"Count": 4
 			}
 		]
 	},
 	{
-		"Name": "MAKE_GOLD",
+		"Name": "MakeGold",
 		"XpReward": 22.5,
 		"RequiredResources": [
 			{
-				"Name": "GOLD_ORE",
+				"Name": "GoldOre",
 				"Count": 1
 			}
 		]
 	},
 	{
-		"Name": "MAKE_ADAMANT",
+		"Name": "MakeAdamant",
 		"XpReward": 37.5,
 		"RequiredResources": [
 			{
-				"Name": "ADAMANT_ORE",
+				"Name": "AdamantOre",
 				"Count": 1
 			},
 			{
-				"Name": "COAL",
+				"Name": "Coal",
 				"Count": 6
 			}
 		]
 	},
 	{
-		"Name": "MAKE_RUNE",
+		"Name": "MakeRune",
 		"XpReward": 75,
 		"RequiredResources": [
 			{
-				"Name": "RUNE_ORE",
+				"Name": "RuneOre",
 				"Count": 1
 			},
 			{
-				"Name": "COAL",
+				"Name": "Coal",
 				"Count": 8
 			}
 		]
