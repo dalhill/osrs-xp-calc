@@ -7,10 +7,12 @@ ultimately should make an MVP that makes a few assumptions
 package actions
 
 import (
+	"encoding/json"
 	"fmt"
-	"sort"
-
 	"github.com/dalton-hill/osrs-xp-calc/items"
+	"io/ioutil"
+	"log"
+	"sort"
 )
 
 type Action struct {
@@ -109,4 +111,17 @@ func (as ActionSlice) GetTotalXP() float64 {
 		t += a.XpReward * float64(a.Count)
 	}
 	return t
+}
+
+// LoadFromJSON loads actions.ActionSlice from the specified path.
+func LoadActionsFromJSON(filename string) ActionSlice {
+	bs, err := ioutil.ReadFile(filename)
+	if err != nil {
+		log.Fatal(err)
+	}
+	var as ActionSlice
+	if err := json.Unmarshal(bs, &as); err != nil {
+		log.Fatal(err)
+	}
+	return as
 }

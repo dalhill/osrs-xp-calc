@@ -2,9 +2,7 @@ package modifications
 
 import (
 	"fmt"
-
 	"github.com/dalton-hill/osrs-xp-calc/actions"
-	"github.com/dalton-hill/osrs-xp-calc/actions/ore"
 	"github.com/dalton-hill/osrs-xp-calc/items"
 )
 
@@ -22,14 +20,14 @@ type Modification struct {
 }
 
 // Modifier will be something such as GoldGauntlets which would return an
-// updated MakeGold action which has its experience reward doubled.
+// updated MAKE_GOLD action which has its experience reward doubled.
 // type Modifier interface {
 // 	Modify func
 // }
 
 var GoldGauntlets = Modification{
 	Name:        "GoldGauntlets",
-	ActionNames: []string{ore.MakeGold},
+	ActionNames: []string{actions.MAKE_GOLD},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
 		a.XpReward = 55
@@ -39,7 +37,7 @@ var GoldGauntlets = Modification{
 
 var BlastFurnace = Modification{
 	Name:        "BlastFurnace",
-	ActionNames: []string{ore.MakeSteel, ore.MakeMithril, ore.MakeAdamant, ore.MakeRune},
+	ActionNames: []string{actions.MAKE_STEEL, actions.MAKE_MITHRIL, actions.MAKE_ADAMANT, actions.MAKE_RUNE},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
 		for i := range a.RequiredResources {

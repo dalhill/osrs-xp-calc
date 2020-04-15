@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/dalton-hill/osrs-xp-calc/actions"
-	"github.com/dalton-hill/osrs-xp-calc/actions/ore"
 	"github.com/dalton-hill/osrs-xp-calc/items"
 	"github.com/dalton-hill/osrs-xp-calc/modifications"
 )
@@ -23,7 +21,7 @@ import (
 	todo:
 		- allow user to not take an aciton, for example don't make iron bars because user only wants to use iron ore for steel bars
 
-		- allow user to assign priority, ex: {action: makeIron, priority: 8}
+		- allow user to assign priority, ex: {action: MAKE_IRON, priority: 8}
 		- only thing to add after that would be applying boons (ex: gold gauntlets)
 
 		aglorithm as follows
@@ -43,8 +41,8 @@ import (
 */
 
 func main() {
-	itemStore := items.LoadFromJSON("bank.json")
-	actionStore := ore.LoadFromJSON("actions/ore/ore.json")
+	itemStore := items.LoadItemsFromJSON("items/items.json")
+	actionStore := actions.LoadActionsFromJSON("actions/actions.json")
 	actionStore.SortByXpPer(items.COAL)
 	mods := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
 

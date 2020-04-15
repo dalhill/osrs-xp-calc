@@ -1,6 +1,6 @@
 [
 	{
-		"Name": "MakeBronze",
+		"Name": "MAKE_BRONZE",
 		"XpReward": 6.5,
 		"RequiredResources": [
 			{
@@ -14,7 +14,7 @@
 		]
 	},
 	{
-		"Name": "MakeIron",
+		"Name": "MAKE_IRON",
 		"XpReward": 12.5,
 		"RequiredResources": [
 			{
@@ -24,7 +24,7 @@
 		]
 	},
 	{
-		"Name": "MakeSteel",
+		"Name": "MAKE_STEEL",
 		"XpReward": 17.5,
 		"RequiredResources": [
 			{
@@ -38,7 +38,7 @@
 		]
 	},
 	{
-		"Name": "MakeSilver",
+		"Name": "MAKE_SILVER",
 		"XpReward": 13.7,
 		"RequiredResources": [
 			{
@@ -48,7 +48,7 @@
 		]
 	},
 	{
-		"Name": "MakeMithril",
+		"Name": "MAKE_MITHRIL",
 		"XpReward": 30,
 		"RequiredResources": [
 			{
@@ -62,7 +62,7 @@
 		]
 	},
 	{
-		"Name": "MakeGold",
+		"Name": "MAKE_GOLD",
 		"XpReward": 22.5,
 		"RequiredResources": [
 			{
@@ -72,7 +72,7 @@
 		]
 	},
 	{
-		"Name": "MakeAdamant",
+		"Name": "MAKE_ADAMANT",
 		"XpReward": 37.5,
 		"RequiredResources": [
 			{
@@ -86,7 +86,7 @@
 		]
 	},
 	{
-		"Name": "MakeRune",
+		"Name": "MAKE_RUNE",
 		"XpReward": 75,
 		"RequiredResources": [
 			{

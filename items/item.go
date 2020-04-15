@@ -48,7 +48,7 @@ func IndexMap(a ItemSlice, b ItemSlice) map[int]int {
 }
 
 // LoadFromJSON loads ItemSlice from the specified path.
-func LoadFromJSON(filename string) ItemSlice {
+func LoadItemsFromJSON(filename string) ItemSlice {
 	bs, err := ioutil.ReadFile(filename)
 	if err != nil {
 		log.Fatal(err)
