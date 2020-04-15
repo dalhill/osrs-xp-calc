@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/dalton-hill/osrs-xp-calc/actions"
 	"github.com/dalton-hill/osrs-xp-calc/items"
+	"github.com/dalton-hill/osrs-xp-calc/skills"
 )
 
 type UserSelection struct {
@@ -30,7 +31,7 @@ var GoldGauntlets = Modification{
 	ActionNames: []string{actions.MakeGold},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
-		a.XpReward = 55
+		a.ExperienceOutput[skills.Smithing] = 55
 		return a
 	},
 }
@@ -40,8 +41,8 @@ var BlastFurnace = Modification{
 	ActionNames: []string{actions.MakeSteel, actions.MakeMithril, actions.MakeAdamant, actions.MakeRune},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
-		for i := range a.RequiredResources {
-			r := &a.RequiredResources[i]
+		for i := range a.ItemInputs {
+			r := &a.ItemInputs[i]
 			if r.Name == items.Coal {
 				r.Count = r.Count / 2
 			}

@@ -5,6 +5,7 @@ import (
 	"github.com/dalton-hill/osrs-xp-calc/actions"
 	"github.com/dalton-hill/osrs-xp-calc/items"
 	"github.com/dalton-hill/osrs-xp-calc/modifications"
+	"github.com/dalton-hill/osrs-xp-calc/skills"
 )
 
 
@@ -14,7 +15,7 @@ import (
 		- allow user to assign priority, ex: {action: MakeIron, priority: 8}
 		- only thing to add after that would be applying boons (ex: gold gauntlets)
 
-		aglorithm as follows
+		algorithm as follows
 			1. load config
 			2. filter out all inactive modifications
 			3. for each action
@@ -28,12 +29,17 @@ import (
 			6. take all actions
 			7. repeat at step 3 if any actions were taken (items may have been produced)
 			8. sum up all xp gained/items produced
+
+
+todo: food for thought...
+	1. either take maxActions OR actions require for next level
+	2. if leveled up in step 1 then recalculate everything as we may have access to new methods
 */
 
 func main() {
 	itemSlice := items.LoadItemsFromJSON("items/items.json")
 	actionSlice := actions.LoadActionsFromJSON("actions/actions.json")
-	actionSlice.SortByXpPer(items.Coal)
+	actionSlice.SortByXpPer(items.Coal, skills.Smithing)
 	modificationSlice := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
 
 	// apply modifications
@@ -47,7 +53,11 @@ func main() {
 	}
 
 	// display to user
-	fmt.Println(itemSlice)
-	fmt.Printf("TotalXP: %f\n", actionSlice.GetTotalXP())
+	fmt.Println("items remaining: ", itemSlice)
+	fmt.Println("experience outputs: ")
+	skillExperience := actionSlice.GetTotalXP()
+	for k, v := range skillExperience {
+		fmt.Printf("\t%s: %f", k, v)
+	}
 }
 

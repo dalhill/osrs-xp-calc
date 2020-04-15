@@ -1,8 +1,10 @@
 [
 	{
 		"Name": "MakeBronze",
-		"XpReward": 6.5,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 6.5
+		},
+		"ItemInputs": [
 			{
 				"Name": "CopperOre",
 				"Count": 1
@@ -15,8 +17,10 @@
 	},
 	{
 		"Name": "MakeIron",
-		"XpReward": 12.5,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 12.5
+		},
+		"ItemInputs": [
 			{
 				"Name": "IronOre",
 				"Count": 1
@@ -25,8 +29,10 @@
 	},
 	{
 		"Name": "MakeSteel",
-		"XpReward": 17.5,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 17.5
+		},
+		"ItemInputs": [
 			{
 				"Name": "IronOre",
 				"Count": 1
@@ -39,8 +45,10 @@
 	},
 	{
 		"Name": "MakeSilver",
-		"XpReward": 13.7,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 13.7
+		},
+		"ItemInputs": [
 			{
 				"Name": "SilverOre",
 				"Count": 1
@@ -49,8 +57,10 @@
 	},
 	{
 		"Name": "MakeMithril",
-		"XpReward": 30,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 30
+		},
+		"ItemInputs": [
 			{
 				"Name": "MithrilOre",
 				"Count": 1
@@ -63,8 +73,10 @@
 	},
 	{
 		"Name": "MakeGold",
-		"XpReward": 22.5,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 22.5
+		},
+		"ItemInputs": [
 			{
 				"Name": "GoldOre",
 				"Count": 1
@@ -73,8 +85,10 @@
 	},
 	{
 		"Name": "MakeAdamant",
-		"XpReward": 37.5,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 37.5
+		},
+		"ItemInputs": [
 			{
 				"Name": "AdamantOre",
 				"Count": 1
@@ -87,8 +101,10 @@
 	},
 	{
 		"Name": "MakeRune",
-		"XpReward": 75,
-		"RequiredResources": [
+		"ExperienceOutput": {
+			"Smithing": 75
+		},
+		"ItemInputs": [
 			{
 				"Name": "RuneOre",
 				"Count": 1
