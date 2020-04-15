@@ -7,20 +7,10 @@ import (
 	"github.com/dalton-hill/osrs-xp-calc/modifications"
 )
 
-/*
-   iron: 12675
-   adamant: 5837
-   rune: 423
-   silver: 566
-   Coal: 12014
-   mithril: 5860
-   gold: 8453
-*/
 
 /*
 	todo:
 		- allow user to not take an aciton, for example don't make iron bars because user only wants to use iron ore for steel bars
-
 		- allow user to assign priority, ex: {action: MakeIron, priority: 8}
 		- only thing to add after that would be applying boons (ex: gold gauntlets)
 
@@ -41,19 +31,23 @@ import (
 */
 
 func main() {
-	itemStore := items.LoadItemsFromJSON("items/items.json")
-	actionStore := actions.LoadActionsFromJSON("actions/actions.json")
-	actionStore.SortByXpPer(items.Coal)
-	mods := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
+	itemSlice := items.LoadItemsFromJSON("items/items.json")
+	actionSlice := actions.LoadActionsFromJSON("actions/actions.json")
+	actionSlice.SortByXpPer(items.Coal)
+	modificationSlice := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
 
-	for i := range actionStore {
-		for _, m := range mods {
-			if m.CanModify(actionStore[i]) {
-				actionStore[i] = m.Modify(actionStore[i])
-			}
-		}
-		actions.TakeMaxAction(&actionStore[i], itemStore)
+	// apply modifications
+	for i, a := range actionSlice {
+		actionSlice[i] = modifications.ApplyModifications(a, modificationSlice)
 	}
-	fmt.Println(itemStore)
-	fmt.Printf("TotalXP: %f\n", actionStore.GetTotalXP())
+
+	// take action
+	for i := range actionSlice {
+		actions.TakeMaxAction(&actionSlice[i], itemSlice)
+	}
+
+	// display to user
+	fmt.Println(itemSlice)
+	fmt.Printf("TotalXP: %f\n", actionSlice.GetTotalXP())
 }
+

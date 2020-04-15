@@ -59,3 +59,12 @@ func (m Modification) CanModify(a actions.Action) bool {
 	}
 	return false
 }
+
+func ApplyModifications(a actions.Action, ms []Modification) actions.Action {
+	for _, m := range ms {
+		if m.CanModify(a) {
+			a = m.Modify(a)
+		}
+	}
+	return a
+}
