@@ -37,7 +37,7 @@ todo: food for thought...
 */
 
 func main() {
-	itemSlice := items.LoadItemsFromJSON("items/items.json")
+	itemMap := items.LoadItemsFromJSON("items/items.json")
 	actionSlice := actions.LoadActionsFromJSON("actions/actions.json")
 	actionSlice.SortByXpPer(items.Coal, skills.Smithing)
 	modificationSlice := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
@@ -49,15 +49,15 @@ func main() {
 
 	// take action
 	for i := range actionSlice {
-		actions.TakeMaxAction(&actionSlice[i], itemSlice)
+		actions.TakeMaxAction(&actionSlice[i], itemMap)
 	}
 
 	// display to user
-	fmt.Println("items remaining: ", itemSlice)
+	fmt.Println("items remaining: ", itemMap)
 	fmt.Println("experience outputs: ")
 	skillExperience := actionSlice.GetTotalXP()
 	for k, v := range skillExperience {
-		fmt.Printf("\t%s: %f", k, v)
+		fmt.Printf("\t%s: %f\n", k, v)
 	}
 }
 

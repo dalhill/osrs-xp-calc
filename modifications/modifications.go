@@ -31,7 +31,7 @@ var GoldGauntlets = Modification{
 	ActionNames: []string{actions.MakeGold},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
-		a.ExperienceOutput[skills.Smithing] = 55
+		a.ExperienceOutputs[skills.Smithing] = 55
 		return a
 	},
 }
@@ -41,11 +41,8 @@ var BlastFurnace = Modification{
 	ActionNames: []string{actions.MakeSteel, actions.MakeMithril, actions.MakeAdamant, actions.MakeRune},
 	ShouldApply: false,
 	Modify: func(a actions.Action) actions.Action {
-		for i := range a.ItemInputs {
-			r := &a.ItemInputs[i]
-			if r.Name == items.Coal {
-				r.Count = r.Count / 2
-			}
+		if count, ok := a.ItemInputs[items.Coal]; ok {  // todo: can we get pointer here instead of double getting?
+			a.ItemInputs[items.Coal] = count / 2
 		}
 		return a
 	},

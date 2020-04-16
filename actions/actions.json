@@ -1,118 +1,102 @@
 [
 	{
 		"Name": "MakeBronze",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 6.5
 		},
-		"ItemInputs": [
-			{
-				"Name": "CopperOre",
-				"Count": 1
-			},
-			{
-				"Name": "TinOre",
-				"Count": 1
-			}
-		]
+		"ItemInputs": {
+			"CopperOre": 1,
+			"TinOre": 1
+		}
 	},
 	{
 		"Name": "MakeIron",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 12.5
 		},
-		"ItemInputs": [
-			{
-				"Name": "IronOre",
-				"Count": 1
-			}
-		]
+		"ItemInputs": {
+			"IronOre": 1
+		}
 	},
 	{
 		"Name": "MakeSteel",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 17.5
 		},
-		"ItemInputs": [
-			{
-				"Name": "IronOre",
-				"Count": 1
-			},
-			{
-				"Name": "Coal",
-				"Count": 2
-			}
-		]
+		"ItemInputs": {
+			"IronOre": 1,
+			"Coal": 2
+		}
 	},
 	{
 		"Name": "MakeSilver",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 13.7
 		},
-		"ItemInputs": [
-			{
-				"Name": "SilverOre",
-				"Count": 1
-			}
-		]
+		"ItemInputs": {
+			"SilverOre": 1
+		}
 	},
 	{
 		"Name": "MakeMithril",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 30
 		},
-		"ItemInputs": [
-			{
-				"Name": "MithrilOre",
-				"Count": 1
-			},
-			{
-				"Name": "Coal",
-				"Count": 4
-			}
-		]
+		"ItemInputs": {
+			"MithrilOre": 1,
+			"Coal": 4
+		}
 	},
 	{
 		"Name": "MakeGold",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 22.5
 		},
-		"ItemInputs": [
-			{
-				"Name": "GoldOre",
-				"Count": 1
-			}
-		]
+		"ItemInputs": {
+			"GoldOre": 1
+		}
 	},
 	{
 		"Name": "MakeAdamant",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 37.5
 		},
-		"ItemInputs": [
-			{
-				"Name": "AdamantOre",
-				"Count": 1
-			},
-			{
-				"Name": "Coal",
-				"Count": 6
-			}
-		]
+		"ItemInputs": {
+			"AdamantOre": 1,
+			"Coal": 6
+		}
 	},
 	{
 		"Name": "MakeRune",
-		"ExperienceOutput": {
+		"ExperienceOutputs": {
 			"Smithing": 75
 		},
-		"ItemInputs": [
-			{
-				"Name": "RuneOre",
-				"Count": 1
-			},
-			{
-				"Name": "Coal",
-				"Count": 8
-			}
-		]
+		"ItemInputs": {
+			"RuneOre": 1,
+			"Coal": 8
+		}
+	},
+	{
+		"Name": "MakePrayerPotion",
+		"ExperienceOutputs": {
+			"Herblore": 87.5
+		},
+		"ItemInputs": {
+			"SnapeGrass": 1,
+			"RanarrWeed": 1,
+			"VialOfWater": 1
+		}
+	},
+	{
+		"Name": "CleanRanarrWeed",
+		"ExperienceOutputs": {
+			"Herblore": 7.5
+		},
+		"ItemOutputs": {
+			"RanarrWeed": 1
+		},
+		"ItemInputs": {
+			"GrimyRanarrWeed": 1
+		}
 	}
 ]

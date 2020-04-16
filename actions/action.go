@@ -16,10 +16,11 @@ import (
 )
 
 type Action struct {
-	Name       string
-	Count      int
-	ItemInputs items.ItemSlice
-	ExperienceOutput map[string]float64
+	Name              string
+	Count             int
+	ItemInputs        items.ItemMap
+	ItemOutputs       items.ItemMap
+	ExperienceOutputs map[string]float64
 }
 
 type ActionSlice []Action
@@ -28,27 +29,6 @@ type ActionFilter func(Action) bool
 
 type ActionSliceComparison func(ActionSlice) func(i, j int) bool
 
-func RequiresItemFilter(itemName string) func(Action) bool {
-	return func(a Action) bool {
-		for _, ic := range a.ItemInputs {
-			if ic.Name == itemName {
-				return true
-			}
-		}
-		return false
-	}
-}
-
-func FilterActions(as ActionSlice, f ActionFilter) ActionSlice {
-	var cs ActionSlice
-	for _, a := range as {
-		if f(a) {
-			cs = append(cs, a)
-		}
-	}
-	return cs
-}
-
 func (as ActionSlice) SortByXpPer(reqName string, skillName string) {
 	sort.Slice(as[:], func(i, j int) bool {
 		return as[i].XpPer(reqName, skillName) > as[j].XpPer(reqName, skillName)
@@ -56,37 +36,20 @@ func (as ActionSlice) SortByXpPer(reqName string, skillName string) {
 }
 
 func (a Action) XpPer(reqName string, skillName string) float64 {
-	for _, item := range a.ItemInputs {
-		if item.Name == reqName {
-			return a.ExperienceOutput[skillName]/ float64(item.Count)
+	if count, ok := a.ItemInputs[reqName]; ok {
+		if xp, ok := a.ExperienceOutputs[skillName]; ok {
+			return xp / float64(count)
 		}
 	}
 	return 0
 }
 
-func ResourcesAvailable(a Action, inv []items.Item) bool {
-	for _, r := range a.ItemInputs {
-		isSatisfied := false
-		for _, i := range inv {
-			if i.Name == r.Name {
-				isSatisfied = i.Count >= r.Count
-				break
-			}
-		}
-		if !isSatisfied {
-			return false
-		}
-	}
-	return true
-}
-
-func TakeMaxAction(a *Action, itemSlice items.ItemSlice) {
-	// reqIndex, itemSliceIndex
-	indexMap := items.IndexMap(itemSlice, a.ItemInputs)
+func TakeMaxAction(a *Action, itemMap items.ItemMap) {
 	var possibleActions []int
-	for k, v := range indexMap {
-		current := itemSlice[k].Count / a.ItemInputs[v].Count
-		possibleActions = append(possibleActions, current)
+	for req := range a.ItemInputs {
+		if count, ok := itemMap[req]; ok {
+			possibleActions = append(possibleActions, count / a.ItemInputs[req])
+		}
 	}
 	var maxAction int
 	if len(possibleActions) > 0 {
@@ -97,8 +60,10 @@ func TakeMaxAction(a *Action, itemSlice items.ItemSlice) {
 			}
 		}
 	}
-	for k, v := range indexMap {
-		itemSlice[k].Count -= a.ItemInputs[v].Count * maxAction
+	for req := range a.ItemInputs {
+		if _, ok := itemMap[req]; ok {
+			itemMap[req] -= a.ItemInputs[req] * maxAction
+		}
 	}
 	a.Count += maxAction
 	fmt.Println(a.Name, a.Count)
@@ -108,7 +73,7 @@ func TakeMaxAction(a *Action, itemSlice items.ItemSlice) {
 func (as ActionSlice) GetTotalXP() map[string]float64 {
 	skillExperience := make(map[string]float64)
 	for _, a := range as {
-		for k, v := range a.ExperienceOutput {
+		for k, v := range a.ExperienceOutputs {
 			e := float64(a.Count) * v
 			if _, ok := skillExperience[k]; ok {
 				skillExperience[k] += e

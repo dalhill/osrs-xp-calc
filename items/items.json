@@ -1,30 +1,13 @@
-[
-    {
-        "Name": "IronOre",
-        "Count": 12729
-    },
-    {
-        "Name": "SilverOre",
-        "Count": 666
-    },
-    {
-        "Name": "Coal",
-        "Count": 32707
-    },
-    {
-        "Name": "GoldOre",
-        "Count": 9855
-    },
-    {
-        "Name": "MithrilOre",
-        "Count": 7611
-    },
-    {
-        "Name": "AdamantOre",
-        "Count": 7352
-    },
-    {
-        "Name": "RuneOre",
-        "Count": 625
-    }
-]
+{
+    "IronOre": 12729,
+    "SilverOre": 666,
+    "Coal": 32707,
+    "GoldOre": 9855,
+    "MithrilOre": 7611,
+    "AdamantOre": 7352,
+    "RuneOre": 625,
+    "RanarrWeed": 577,
+    "GrimyRanarrWeed": 3067,
+    "SnapeGrass": 362,
+    "VialOfWater": 3069
+}
