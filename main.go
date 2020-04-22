@@ -36,6 +36,11 @@ todo: food for thought...
 	2. if leveled up in step 1 then recalculate everything as we may have access to new methods
 */
 
+
+// todo: for simplicity sake, potion input/output will be 1 count per one dose. Ex: making pray potion produces 3 prayer potions
+//  making super combat requires 4 super attack, 4 super strength, 4 super defence
+//  when displaying total potions made, just divide count by 4 and show them 4 dose potions...
+
 func main() {
 	itemMap := items.LoadItemsFromJSON("items/items.json")
 	actionSlice := actions.LoadActionsFromJSON("actions/actions.json")
@@ -53,7 +58,7 @@ func main() {
 	}
 
 	// display to user
-	fmt.Println("items remaining: ", itemMap)
+	// fmt.Println("items remaining: ", itemMap)
 	fmt.Println("experience outputs: ")
 	skillExperience := actionSlice.GetTotalXP()
 	for k, v := range skillExperience {

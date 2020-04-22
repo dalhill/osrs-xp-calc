@@ -1,102 +1,965 @@
 [
-	{
-		"Name": "MakeBronze",
-		"ExperienceOutputs": {
-			"Smithing": 6.5
-		},
-		"ItemInputs": {
-			"CopperOre": 1,
-			"TinOre": 1
-		}
-	},
-	{
-		"Name": "MakeIron",
-		"ExperienceOutputs": {
-			"Smithing": 12.5
-		},
-		"ItemInputs": {
-			"IronOre": 1
-		}
-	},
-	{
-		"Name": "MakeSteel",
-		"ExperienceOutputs": {
-			"Smithing": 17.5
-		},
-		"ItemInputs": {
-			"IronOre": 1,
-			"Coal": 2
-		}
-	},
-	{
-		"Name": "MakeSilver",
-		"ExperienceOutputs": {
-			"Smithing": 13.7
-		},
-		"ItemInputs": {
-			"SilverOre": 1
-		}
-	},
-	{
-		"Name": "MakeMithril",
-		"ExperienceOutputs": {
-			"Smithing": 30
-		},
-		"ItemInputs": {
-			"MithrilOre": 1,
-			"Coal": 4
-		}
-	},
-	{
-		"Name": "MakeGold",
-		"ExperienceOutputs": {
-			"Smithing": 22.5
-		},
-		"ItemInputs": {
-			"GoldOre": 1
-		}
-	},
-	{
-		"Name": "MakeAdamant",
-		"ExperienceOutputs": {
-			"Smithing": 37.5
-		},
-		"ItemInputs": {
-			"AdamantOre": 1,
-			"Coal": 6
-		}
-	},
-	{
-		"Name": "MakeRune",
-		"ExperienceOutputs": {
-			"Smithing": 75
-		},
-		"ItemInputs": {
-			"RuneOre": 1,
-			"Coal": 8
-		}
-	},
-	{
-		"Name": "MakePrayerPotion",
-		"ExperienceOutputs": {
-			"Herblore": 87.5
-		},
-		"ItemInputs": {
-			"SnapeGrass": 1,
-			"RanarrWeed": 1,
-			"VialOfWater": 1
-		}
-	},
-	{
-		"Name": "CleanRanarrWeed",
-		"ExperienceOutputs": {
-			"Herblore": 7.5
-		},
-		"ItemOutputs": {
-			"RanarrWeed": 1
-		},
-		"ItemInputs": {
-			"GrimyRanarrWeed": 1
-		}
-	}
+  {
+    "Name": "MakeBronze",
+    "ExperienceOutputs": {
+      "Smithing": 6.5
+    },
+    "ItemInputs": {
+      "CopperOre": 1,
+      "TinOre": 1
+    }
+  },
+  {
+    "Name": "MakeIron",
+    "ExperienceOutputs": {
+      "Smithing": 12.5
+    },
+    "ItemInputs": {
+      "IronOre": 1
+    }
+  },
+  {
+    "Name": "MakeSteel",
+    "ExperienceOutputs": {
+      "Smithing": 17.5
+    },
+    "ItemInputs": {
+      "IronOre": 1,
+      "Coal": 2
+    }
+  },
+  {
+    "Name": "MakeSilver",
+    "ExperienceOutputs": {
+      "Smithing": 13.7
+    },
+    "ItemInputs": {
+      "SilverOre": 1
+    }
+  },
+  {
+    "Name": "MakeMithril",
+    "ExperienceOutputs": {
+      "Smithing": 30
+    },
+    "ItemInputs": {
+      "MithrilOre": 1,
+      "Coal": 4
+    }
+  },
+  {
+    "Name": "MakeGold",
+    "ExperienceOutputs": {
+      "Smithing": 22.5
+    },
+    "ItemInputs": {
+      "GoldOre": 1
+    }
+  },
+  {
+    "Name": "MakeAdamant",
+    "ExperienceOutputs": {
+      "Smithing": 37.5
+    },
+    "ItemInputs": {
+      "AdamantOre": 1,
+      "Coal": 6
+    }
+  },
+  {
+    "Name": "MakeRune",
+    "ExperienceOutputs": {
+      "Smithing": 75
+    },
+    "ItemInputs": {
+      "RuneOre": 1,
+      "Coal": 8
+    }
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 2.5
+    },
+    "ItemInputs": {
+      "GrimyGuamLeaf": 1
+    },
+    "ItemOutputs": {
+      "GuamLeaf": 1
+    },
+    "Name": "CleanGuamLeaf"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 3.8
+    },
+    "ItemInputs": {
+      "GrimyMarrentill": 1
+    },
+    "ItemOutputs": {
+      "Marrentill": 1
+    },
+    "Name": "CleanMarrentill"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 5.0
+    },
+    "ItemInputs": {
+      "GrimyTarromin": 1
+    },
+    "ItemOutputs": {
+      "Tarromin": 1
+    },
+    "Name": "CleanTarromin"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 6.3
+    },
+    "ItemInputs": {
+      "GrimyHarralander": 1
+    },
+    "ItemOutputs": {
+      "Harralander": 1
+    },
+    "Name": "CleanHarralander"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 7.5
+    },
+    "ItemInputs": {
+      "GrimyRanarrWeed": 1
+    },
+    "ItemOutputs": {
+      "RanarrWeed": 1
+    },
+    "Name": "CleanRanarrWeed"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 8.0
+    },
+    "ItemInputs": {
+      "GrimyToadflax": 1
+    },
+    "ItemOutputs": {
+      "Toadflax": 1
+    },
+    "Name": "CleanToadflax"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 8.8
+    },
+    "ItemInputs": {
+      "GrimyIritLeaf": 1
+    },
+    "ItemOutputs": {
+      "IritLeaf": 1
+    },
+    "Name": "CleanIritLeaf"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 10.0
+    },
+    "ItemInputs": {
+      "GrimyAvantoe": 1
+    },
+    "ItemOutputs": {
+      "Avantoe": 1
+    },
+    "Name": "CleanAvantoe"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 11.3
+    },
+    "ItemInputs": {
+      "GrimyKwuarm": 1
+    },
+    "ItemOutputs": {
+      "Kwuarm": 1
+    },
+    "Name": "CleanKwuarm"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 11.8
+    },
+    "ItemInputs": {
+      "GrimySnapdragon": 1
+    },
+    "ItemOutputs": {
+      "Snapdragon": 1
+    },
+    "Name": "CleanSnapdragon"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 12.5
+    },
+    "ItemInputs": {
+      "GrimyCadantine": 1
+    },
+    "ItemOutputs": {
+      "Cadantine": 1
+    },
+    "Name": "CleanCadantine"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 13.1
+    },
+    "ItemInputs": {
+      "GrimyLantadyme": 1
+    },
+    "ItemOutputs": {
+      "Lantadyme": 1
+    },
+    "Name": "CleanLantadyme"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 13.8
+    },
+    "ItemInputs": {
+      "GrimyDwarfWeed": 1
+    },
+    "ItemOutputs": {
+      "DwarfWeed": 1
+    },
+    "Name": "CleanDwarfWeed"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 15.0
+    },
+    "ItemInputs": {
+      "GrimyTorstol": 1
+    },
+    "ItemOutputs": {
+      "Torstol": 1
+    },
+    "Name": "CleanTorstol"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 5.0
+    },
+    "ItemInputs": {
+      "AnchovyOil": 1,
+      "Flowers": 1
+    },
+    "ItemOutputs": {
+      "ImpRepellent": 1
+    },
+    "Name": "MakeImpRepellent"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 25.0
+    },
+    "ItemInputs": {
+      "EyeOfNewt": 1,
+      "GuamLeaf": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "AttackPotion": 3
+    },
+    "Name": "MakeAttackPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 37.5
+    },
+    "ItemInputs": {
+      "Marrentill": 1,
+      "UnicornHornDust": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "Antipoison": 3
+    },
+    "Name": "MakeAntipoison"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 40.0
+    },
+    "ItemInputs": {
+      "RoguesPurse": 1,
+      "SnakeWeed": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "RelicymsBalm": 3
+    },
+    "Name": "MakeRelicymsBalm"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 50.0
+    },
+    "ItemInputs": {
+      "LimpwurtRoot": 1,
+      "Tarromin": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "StrengthPotion": 3
+    },
+    "Name": "MakeStrengthPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 50.0
+    },
+    "ItemInputs": {
+      "Ashes": 1,
+      "Tarromin": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "Serum207": 3
+    },
+    "Name": "MakeSerum207"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 59.5
+    },
+    "ItemInputs": {
+      "CupOfHotWater": 1,
+      "GuamLeaves": 2,
+      "Marrentill": 1,
+      "Harralander": 1
+    },
+    "ItemOutputs": {
+      "GuthixRestTea": 1
+    },
+    "Name": "MakeGuthixRestTea"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 60.0
+    },
+    "ItemInputs": {
+      "Harralander": 1,
+      "VialOfWater": 1,
+      "VolcanicAsh": 1
+    },
+    "ItemOutputs": {
+      "CompostPotion": 3
+    },
+    "Name": "MakeCompostPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 62.5
+    },
+    "ItemInputs": {
+      "Harralander": 1,
+      "RedSpidersEggs": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "RestorePotion": 3
+    },
+    "Name": "MakeRestorePotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 50.0
+    },
+    "ItemInputs": {
+      "Garlic": 1,
+      "RestorePotion": 3,
+      "SilverDust": 1
+    },
+    "ItemOutputs": {
+      "GuthixBalance": 3
+    },
+    "Name": "MakeGuthixBalance"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 80.0
+    },
+    "ItemInputs": {
+      "BlamishSnailSlime": 1,
+      "Harralander": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "BlamishOil": 1
+    },
+    "Name": "MakeBlamishOil"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 67.5
+    },
+    "ItemInputs": {
+      "ChocolateDust": 1,
+      "Harralander": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "EnergyPotion": 3
+    },
+    "Name": "MakeEnergyPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 75.0
+    },
+    "ItemInputs": {
+      "RanarrWeed": 1,
+      "VialOfWater": 1,
+      "WhiteBerries": 1
+    },
+    "ItemOutputs": {
+      "DefencePotion": 3
+    },
+    "Name": "MakeDefencePotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 80.0
+    },
+    "ItemInputs": {
+      "ToadsLegs": 1,
+      "Toadflax": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "AgilityPotion": 3
+    },
+    "Name": "MakeAgilityPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 84.0
+    },
+    "ItemInputs": {
+      "GoatHornDust": 1,
+      "Harralander": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "CombatPotion": 3
+    },
+    "Name": "MakeCombatPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 87.5
+    },
+    "ItemInputs": {
+      "RanarrWeed": 1,
+      "SnapeGrass": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "PrayerPotion": 3
+    },
+    "Name": "MakePrayerPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 100.0
+    },
+    "ItemInputs": {
+      "EyeOfNewt": 1,
+      "IritLeaf": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "SuperAttack": 3
+    },
+    "Name": "MakeSuperAttack"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 106.3
+    },
+    "ItemInputs": {
+      "IritLeaf": 1,
+      "UnicornHornDust": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "Superantipoison": 3
+    },
+    "Name": "MakeSuperantipoison"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 112.5
+    },
+    "ItemInputs": {
+      "Avantoe": 1,
+      "SnapeGrass": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "FishingPotion": 3
+    },
+    "Name": "MakeFishingPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 117.5
+    },
+    "ItemInputs": {
+      "Avantoe": 1,
+      "MortMyreFungus": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "SuperEnergy": 3
+    },
+    "Name": "MakeSuperEnergy"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 6.0
+    },
+    "ItemInputs": {
+      "ShrunkOgleroot": 1,
+      "Tarromin": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "Shrink-Me-Quick": 1
+    },
+    "Name": "MakeShrink-Me-Quick"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 120.0
+    },
+    "ItemInputs": {
+      "Avantoe": 1,
+      "KebbitTeethDust": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "HunterPotion": 3
+    },
+    "Name": "MakeHunterPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 125.0
+    },
+    "ItemInputs": {
+      "Kwuarm": 1,
+      "LimpwurtRoot": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "SuperStrength": 3
+    },
+    "Name": "MakeSuperStrength"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 130.0
+    },
+    "ItemInputs": {
+      "GorakClawPowder": 1,
+      "StarFlower": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "MagicEssence": 3
+    },
+    "Name": "MakeMagicEssence"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 137.5
+    },
+    "ItemInputs": {
+      "DragonScaleDust": 1,
+      "Kwuarm": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "WeaponPoison": 1
+    },
+    "Name": "MakeWeaponPoison"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 142.5
+    },
+    "ItemInputs": {
+      "RedSpidersEggs": 1,
+      "Snapdragon": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "SuperRestore": 3
+    },
+    "Name": "MakeSuperRestore"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 160.0
+    },
+    "ItemInputs": {
+      "SnakeWeed": 1,
+      "NailBeastNails": 1,
+      "SuperRestore": 4,
+      "UnicornHornDust": 1
+    },
+    "ItemOutputs": {
+      "SanfewSerum": 4
+    },
+    "Name": "MakeSanfewSerum"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 150.0
+    },
+    "ItemInputs": {
+      "Cadantine": 1,
+      "VialOfWater": 1,
+      "WhiteBerries": 1
+    },
+    "ItemOutputs": {
+      "SuperDefence": 3
+    },
+    "Name": "MakeSuperDefence"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 155.0
+    },
+    "ItemInputs": {
+      "CoconutMilk": 1,
+      "Toadflax": 1,
+      "YewRoots": 1
+    },
+    "ItemOutputs": {
+      "Antidote+": 3
+    },
+    "Name": "MakeAntidote+"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 157.5
+    },
+    "ItemInputs": {
+      "DragonScaleDust": 1,
+      "Lantadyme": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "AntifirePotion": 3
+    },
+    "Name": "MakeAntifirePotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 0.5
+    },
+    "ItemInputs": {
+      "CrystalDust": 1,
+      "SuperAttack": 1
+    },
+    "ItemOutputs": {
+      "DivineSuperAttackPotion": 1
+    },
+    "Name": "MakeDivineSuperAttackPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 0.5
+    },
+    "ItemInputs": {
+      "CrystalDust": 1,
+      "SuperDefence": 1
+    },
+    "ItemOutputs": {
+      "DivineSuperDefencePotion": 1
+    },
+    "Name": "MakeDivineSuperDefencePotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 0.5
+    },
+    "ItemInputs": {
+      "CrystalDust": 1,
+      "SuperStrength": 1
+    },
+    "ItemOutputs": {
+      "DivineSuperStrengthPotion": 1
+    },
+    "Name": "MakeDivineSuperStrengthPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 162.5
+    },
+    "ItemInputs": {
+      "DwarfWeed": 1,
+      "VialOfWater": 1,
+      "WineOfZamorak": 1
+    },
+    "ItemOutputs": {
+      "RangingPotion": 1
+    },
+    "Name": "MakeRangingPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 165.0
+    },
+    "ItemInputs": {
+      "CactusSpine": 1,
+      "CoconutMilk": 1,
+      "RedSpidersEggs": 1
+    },
+    "ItemOutputs": {
+      "WeaponPoison+": 1
+    },
+    "Name": "MakeWeaponPoison+"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 0.5
+    },
+    "ItemInputs": {
+      "CrystalDust": 1,
+      "RangingPotion": 1
+    },
+    "ItemOutputs": {
+      "DivineRangingPotion": 1
+    },
+    "Name": "MakeDivineRangingPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 172.5
+    },
+    "ItemInputs": {
+      "Lantadyme": 1,
+      "PotatoCactus": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "MagicPotion": 3
+    },
+    "Name": "MakeMagicPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 25.5
+    },
+    "ItemInputs": {
+      "AmylaseCrystal": 1,
+      "SuperEnergy": 1
+    },
+    "ItemOutputs": {
+      "StaminaPotion": 1
+    },
+    "Name": "MakeStaminaPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 175.0
+    },
+    "ItemInputs": {
+      "Jangerberries": 1,
+      "Torstol": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "ZamorakBrew": 1
+    },
+    "Name": "MakeZamorakBrew"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 0.5
+    },
+    "ItemInputs": {
+      "CrystalDust": 1,
+      "MagicPotion": 1
+    },
+    "ItemOutputs": {
+      "DivineMagicPotion": 1
+    },
+    "Name": "MakeDivineMagicPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 177.5
+    },
+    "ItemInputs": {
+      "CoconutMilk": 1,
+      "IritLeaf": 1,
+      "MagicRoots": 1
+    },
+    "ItemOutputs": {
+      "Antidote++": 3
+    },
+    "Name": "MakeAntidote++"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 155.0
+    },
+    "ItemInputs": {
+      "Cadantine": 1,
+      "VialOfBlood": 1,
+      "WineOfZamorak": 1
+    },
+    "ItemOutputs": {
+      "BastionPotion": 3
+    },
+    "Name": "MakeBastionPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 155.0
+    },
+    "ItemInputs": {
+      "Cadantine": 1,
+      "PotatoCactus": 1,
+      "VialOfBlood": 1
+    },
+    "ItemOutputs": {
+      "BattlemagePotion": 3
+    },
+    "Name": "MakeBattlemagePotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 180.0
+    },
+    "ItemInputs": {
+      "CrushedBirdsNest": 1,
+      "Toadflax": 1,
+      "VialOfWater": 1
+    },
+    "ItemOutputs": {
+      "SaradominBrew": 3
+    },
+    "Name": "MakeSaradominBrew"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 190.0
+    },
+    "ItemInputs": {
+      "CaveNightshade": 1,
+      "CoconutMilk": 1,
+      "PoisonIvyBerries": 1
+    },
+    "ItemOutputs": {
+      "WeaponPoison++": 1
+    },
+    "Name": "MakeWeaponPoison++"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 27.5
+    },
+    "ItemInputs": {
+      "AntifirePotion": 1,
+      "LavaScaleShard": 1
+    },
+    "ItemOutputs": {
+      "ExtendedAntifire": 1
+    },
+    "Name": "MakeExtendedAntifire"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 30
+    },
+    "ItemInputs": {
+      "Antidote++": 1,
+      "ZulrahsScales": 5
+    },
+    "ItemOutputs": {
+      "Anti-Venom": 1
+    },
+    "Name": "MakeAnti-Venom"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 150.0
+    },
+    "ItemInputs": {
+      "SuperAttack": 4,
+      "SuperStrength": 4,
+      "SuperDefence": 4,
+      "Torstol": 1
+    },
+    "ItemOutputs": {
+      "SuperCombatPotion": 4
+    },
+    "Name": "MakeSuperCombatPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 130.0
+    },
+    "ItemInputs": {
+      "AntifirePotion": 4,
+      "CrushedSuperiorDragonBones": 1
+    },
+    "ItemOutputs": {
+      "SuperAntifirePotion": 4
+    },
+    "Name": "MakeSuperAntifirePotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 125.0
+    },
+    "ItemInputs": {
+      "Anti-Venom": 4,
+      "Torstol": 1
+    },
+    "ItemOutputs": {
+      "Anti-Venom+": 4
+    },
+    "Name": "MakeAnti-Venom+"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 0.5
+    },
+    "ItemInputs": {
+      "CrystalDust": 1,
+      "SuperCombatPotion": 1
+    },
+    "ItemOutputs": {
+      "DivineSuperCombatPotion": 1
+    },
+    "Name": "MakeDivineSuperCombatPotion"
+  },
+  {
+    "ExperienceOutputs": {
+      "Herblore": 40
+    },
+    "ItemInputs": {
+      "LavaScaleShard": 1,
+      "SuperAntifirePotion": 1
+    },
+    "ItemOutputs": {
+      "ExtendedSuperAntifire": 1
+    },
+    "Name": "MakeExtendedSuperAntifire"
+  }
 ]
