@@ -8,10 +8,10 @@ package actions
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/dalton-hill/osrs-xp-calc/items"
 	"io/ioutil"
 	"log"
+	"math"
 	"sort"
 )
 
@@ -44,29 +44,23 @@ func (a Action) XpPer(reqName string, skillName string) float64 {
 	return 0
 }
 
-func TakeMaxAction(a *Action, itemMap items.ItemMap) {
-	var possibleActions []int
+// Returns the maximum number of times the action can be performed given the itemMap
+func MaxActionCount(a Action, itemMap items.ItemMap) int {
+	validCount := false
+	maxCount := math.MaxInt32
 	for req := range a.ItemInputs {
-		if count, ok := itemMap[req]; ok {
-			possibleActions = append(possibleActions, count / a.ItemInputs[req])
-		}
-	}
-	var maxAction int
-	if len(possibleActions) > 0 {
-		maxAction = possibleActions[0]
-		for _, v := range possibleActions {
-			if v < maxAction {
-				maxAction = v
+		if numItems, ok := itemMap[req]; ok {
+			validCount = true
+			count := numItems / a.ItemInputs[req]
+			if count < maxCount {
+				maxCount = count
 			}
 		}
 	}
-	for req := range a.ItemInputs {
-		if _, ok := itemMap[req]; ok {
-			itemMap[req] -= a.ItemInputs[req] * maxAction
-		}
+	if validCount {
+		return maxCount
 	}
-	a.Count += maxAction
-	fmt.Println(a.Name, a.Count)
+	return 0
 }
 
 // GetTotalXP sums up the total XP gain that is represented by the ActionSlice

@@ -45,16 +45,44 @@ func main() {
 	itemMap := items.LoadItemsFromJSON("items/items.json")
 	actionSlice := actions.LoadActionsFromJSON("actions/actions.json")
 	actionSlice.SortByXpPer(items.Coal, skills.Smithing)
+	actionSlice.SortByXpPer(items.RanarrWeed, skills.Herblore)
 	modificationSlice := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
+
+	// todo: add blocked actions list for things like normal def potions (use ranarr weed)
 
 	// apply modifications
 	for i, a := range actionSlice {
 		actionSlice[i] = modifications.ApplyModifications(a, modificationSlice)
 	}
 
-	// take action
-	for i := range actionSlice {
-		actions.TakeMaxAction(&actionSlice[i], itemMap)
+	for {
+		addedItemsMap := make(items.ItemMap)
+		var actionsTaken float64 = 0
+		for i := range actionSlice {
+			a := &actionSlice[i]
+			maxActionCount := actions.MaxActionCount(*a, itemMap)
+			for itemName := range a.ItemInputs {
+				if _, ok := itemMap[itemName]; ok {
+					itemMap[itemName] -= a.ItemInputs[itemName] * maxActionCount
+				}
+			}
+			for itemName := range a.ItemOutputs {
+				addedItemsMap[itemName] += a.ItemOutputs[itemName] * maxActionCount
+			}
+			a.Count += maxActionCount
+			actionsTaken += float64(maxActionCount)
+		}
+		for itemName, itemCount := range addedItemsMap {
+			itemMap[itemName] += itemCount
+		}
+		if actionsTaken == 0 {
+			break
+		}
+	}
+	for _, a := range actionSlice {
+		if a.Count > 0 {
+			println(a.Name, a.Count)
+		}
 	}
 
 	// display to user

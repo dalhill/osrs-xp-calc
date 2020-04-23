@@ -8,6 +8,14 @@ import (
 
 type ItemMap map[string]int
 
+func (im ItemMap) Copy() ItemMap {
+	cp := make(ItemMap)
+	for k, v := range im {
+		cp[k] = v
+	}
+	return cp
+}
+
 // LoadFromJSON loads ItemMap from the specified path.
 func LoadItemsFromJSON(filename string) ItemMap {
 	bs, err := ioutil.ReadFile(filename)
