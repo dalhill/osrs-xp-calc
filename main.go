@@ -43,12 +43,27 @@ todo: food for thought...
 
 func main() {
 	itemMap := items.LoadItemsFromJSON("items/items.json")
-	actionSlice := actions.LoadActionsFromJSON("actions/actions.json")
+	allActions := actions.LoadActionsFromJSON("actions/actions.json")
+
+	// remove all ignored actions from the action slice
+	ignoredActionNames := actions.LoadNamesFromJSON("actions/ignoredActions.json")
+	actionSlice := actions.ActionSlice{}
+	for _, a := range allActions {
+		addAction := true
+		for _, name := range ignoredActionNames {
+			if a.Name == name {
+				addAction = false
+				break
+			}
+		}
+		if addAction {
+			actionSlice = append(actionSlice, a)
+		}
+	}
+
 	actionSlice.SortByXpPer(items.Coal, skills.Smithing)
 	actionSlice.SortByXpPer(items.RanarrWeed, skills.Herblore)
 	modificationSlice := []modifications.Modification{modifications.BlastFurnace, modifications.GoldGauntlets} // todo: load & filter to user selected
-
-	// todo: add blocked actions list for things like normal def potions (use ranarr weed)
 
 	// apply modifications
 	for i, a := range actionSlice {
@@ -79,15 +94,23 @@ func main() {
 			break
 		}
 	}
+	println("=====ACTIONS=====")
 	for _, a := range actionSlice {
 		if a.Count > 0 {
 			println(a.Name, a.Count)
 		}
 	}
 
+	println("=====ITEMS=====")
+	for name, count := range itemMap {
+		if count > 0 {
+			println(name, count)
+		}
+	}
+
 	// display to user
 	// fmt.Println("items remaining: ", itemMap)
-	fmt.Println("experience outputs: ")
+	fmt.Println("=====SKILLS=====")
 	skillExperience := actionSlice.GetTotalXP()
 	for k, v := range skillExperience {
 		fmt.Printf("\t%s: %f\n", k, v)
